@@ -4,443 +4,251 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CyberSec Salarios Globales 2026</title>
-  <meta name="description" content="Salarios globales en ciberseguridad 2026 — comparativa por país, rol, región y nivel de experiencia" />
+  <meta name="description" content="Salarios globales en ciberseguridad 2026 — por país, rol, región, nivel y empleo remoto" />
   <style>
     :root {
-      --bg: #070b14;
-      --bg2: #0b1220;
-      --card: rgba(17, 24, 39, 0.82);
-      --card-solid: #111827;
-      --border: rgba(71, 85, 105, 0.35);
-      --accent: #22d3ee;
-      --accent2: #8b5cf6;
-      --accent3: #34d399;
-      --text: #e5eefb;
-      --muted: #94a3b8;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      --bg: #070b14; --bg2: #0b1220;
+      --card: rgba(17,24,39,0.82);
+      --border: rgba(71,85,105,0.35);
+      --accent: #22d3ee; --accent2: #8b5cf6; --accent3: #34d399;
+      --text: #e5eefb; --muted: #94a3b8;
+      --success: #10b981; --warning: #f59e0b; --danger: #ef4444;
+      --shadow: 0 20px 40px rgba(0,0,0,0.28);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background:
-        radial-gradient(circle at top left, rgba(34, 211, 238, 0.10), transparent 26%),
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 24%),
+        radial-gradient(circle at top left,  rgba(34,211,238,0.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(139,92,246,0.12),  transparent 24%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       color: var(--text);
       font-family: Inter, Segoe UI, system-ui, sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
+      line-height: 1.6; min-height: 100vh;
     }
-
     a { color: inherit; }
-
     header {
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
       border-bottom: 1px solid var(--border);
-      padding: 2.7rem 1rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(7,11,20,0.96), rgba(11,18,32,0.92));
+      padding: 2.7rem 1rem 2rem; text-align: center;
+      background: linear-gradient(135deg,rgba(7,11,20,.96),rgba(11,18,32,.92));
       backdrop-filter: blur(10px);
     }
-
-    header::before,
-    header::after {
-      content: '';
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(40px);
-      opacity: 0.35;
-      pointer-events: none;
+    header::before, header::after {
+      content:''; position:absolute; border-radius:999px;
+      filter:blur(40px); opacity:.35; pointer-events:none;
     }
-
-    header::before {
-      width: 260px; height: 260px;
-      background: var(--accent2);
-      top: -100px; left: -60px;
-    }
-
-    header::after {
-      width: 280px; height: 280px;
-      background: var(--accent);
-      right: -80px; top: -120px;
-    }
-
-    .hero { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
-
+    header::before { width:260px;height:260px;background:var(--accent2);top:-100px;left:-60px; }
+    header::after  { width:280px;height:280px;background:var(--accent);right:-80px;top:-120px; }
+    .hero { position:relative; z-index:1; max-width:1100px; margin:0 auto; }
     header h1 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.8rem;
-      background: linear-gradient(135deg, #fff, var(--accent), #c4b5fd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size:clamp(1.8rem,4vw,3rem); line-height:1.15;
+      letter-spacing:-.03em; margin-bottom:.8rem;
+      background:linear-gradient(135deg,#fff,var(--accent),#c4b5fd);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-
-    header p { color: var(--muted); font-size: 1rem; max-width: 760px; margin: 0 auto; }
-
-    .badges {
-      display: flex; gap: 0.55rem; justify-content: center;
-      flex-wrap: wrap; margin-top: 1.2rem;
-    }
-
+    header p { color:var(--muted); font-size:1rem; max-width:760px; margin:0 auto; }
+    .badges { display:flex; gap:.55rem; justify-content:center; flex-wrap:wrap; margin-top:1.2rem; }
     .badge {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.45rem 0.85rem; border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: rgba(255,255,255,0.05);
-      color: #d8e7ff; font-size: 0.78rem;
-      backdrop-filter: blur(8px);
+      display:inline-flex; align-items:center; gap:.35rem;
+      padding:.45rem .85rem; border-radius:999px;
+      border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.05);
+      color:#d8e7ff; font-size:.78rem; backdrop-filter:blur(8px);
     }
-
     nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; justify-content: center;
-      gap: 0.6rem; flex-wrap: wrap;
-      padding: 0.9rem 1rem;
-      border-bottom: 1px solid var(--border);
-      background: rgba(7, 11, 20, 0.78);
-      backdrop-filter: blur(14px);
+      position:sticky; top:0; z-index:100;
+      display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap;
+      padding:.9rem 1rem; border-bottom:1px solid var(--border);
+      background:rgba(7,11,20,.78); backdrop-filter:blur(14px);
     }
-
     nav button {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 0.55rem 1rem; border-radius: 10px;
-      cursor: pointer; font-size: 0.88rem;
-      transition: 0.2s ease;
+      background:rgba(255,255,255,.03); border:1px solid var(--border);
+      color:var(--muted); padding:.55rem 1rem; border-radius:10px;
+      cursor:pointer; font-size:.88rem; transition:.2s ease;
     }
-
     nav button:hover, nav button.active {
-      color: white;
-      border-color: rgba(34, 211, 238, 0.5);
-      background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(139,92,246,0.15));
-      box-shadow: 0 10px 25px rgba(34, 211, 238, 0.08);
+      color:#fff; border-color:rgba(34,211,238,.5);
+      background:linear-gradient(135deg,rgba(34,211,238,.15),rgba(139,92,246,.15));
+      box-shadow:0 10px 25px rgba(34,211,238,.08);
     }
-
-    main { max-width: 1380px; margin: 0 auto; padding: 1.5rem 1rem 2.5rem; }
-
-    section { display: none; }
-    section.active { display: block; }
-
+    main { max-width:1380px; margin:0 auto; padding:1.5rem 1rem 2.5rem; }
+    section { display:none; }
+    section.active { display:block; }
     .section-title {
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-      margin-bottom: 1rem; padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border);
-      font-size: 1.3rem; font-weight: 700; color: #dff7ff;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1rem; flex-wrap:wrap; margin-bottom:1rem; padding-bottom:.8rem;
+      border-bottom:1px solid var(--border);
+      font-size:1.3rem; font-weight:700; color:#dff7ff;
     }
-
-    .section-note {
-      color: var(--muted); font-size: 0.9rem;
-      margin-bottom: 1.2rem; max-width: 900px;
-    }
-
+    .section-note { color:var(--muted); font-size:.9rem; margin-bottom:1.2rem; max-width:900px; }
     .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem; margin-bottom: 1.4rem;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1rem; margin-bottom:1.4rem;
     }
-
     .summary-card {
-      padding: 1rem 1.1rem; border-radius: 16px;
-      background: var(--card); border: 1px solid var(--border);
-      box-shadow: var(--shadow); backdrop-filter: blur(12px);
+      padding:1rem 1.1rem; border-radius:16px;
+      background:var(--card); border:1px solid var(--border);
+      box-shadow:var(--shadow); backdrop-filter:blur(12px);
     }
-
-    .summary-card .label {
-      color: var(--muted); font-size: 0.78rem;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      margin-bottom: 0.35rem;
-    }
-
-    .summary-card .value { font-size: 1.4rem; font-weight: 800; color: #fff; }
-    .summary-card .small { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
-
+    .summary-card .label { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.35rem; }
+    .summary-card .value { font-size:1.4rem; font-weight:800; color:#fff; }
+    .summary-card .small { font-size:.8rem; color:var(--muted); margin-top:.2rem; }
     .filters {
-      display: grid;
-      grid-template-columns: 1.5fr repeat(2, minmax(180px, 220px));
-      gap: 0.9rem; margin-bottom: 1.2rem; align-items: end;
+      display:grid; grid-template-columns:1.5fr repeat(2,minmax(180px,220px));
+      gap:.9rem; margin-bottom:1.2rem; align-items:end;
     }
-
     .filter-box {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 0.9rem;
-      box-shadow: var(--shadow); backdrop-filter: blur(12px);
+      background:var(--card); border:1px solid var(--border);
+      border-radius:14px; padding:.9rem;
+      box-shadow:var(--shadow); backdrop-filter:blur(12px);
     }
-
-    .filter-box label {
-      display: block; font-size: 0.76rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.08em;
-      margin-bottom: 0.45rem;
-    }
-
+    .filter-box label { display:block; font-size:.76rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.45rem; }
     .search-bar, .filter-select {
-      width: 100%;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(71, 85, 105, 0.35);
-      color: var(--text);
-      padding: 0.8rem 0.9rem; border-radius: 10px;
-      font-size: 0.92rem; outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      width:100%; background:rgba(15,23,42,.85);
+      border:1px solid rgba(71,85,105,.35); color:var(--text);
+      padding:.8rem .9rem; border-radius:10px; font-size:.92rem; outline:none;
+      transition:border-color .2s,box-shadow .2s;
     }
-
-    .search-bar:focus, .filter-select:focus {
-      border-color: rgba(34, 211, 238, 0.6);
-      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.08);
+    .search-bar:focus,.filter-select:focus {
+      border-color:rgba(34,211,238,.6); box-shadow:0 0 0 4px rgba(34,211,238,.08);
     }
-
-    .filter-hint { margin-top: 0.5rem; color: var(--muted); font-size: 0.78rem; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1rem;
-    }
-
+    .filter-hint { margin-top:.5rem; color:var(--muted); font-size:.78rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1rem; }
     .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 18px; padding: 1.15rem;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      box-shadow: var(--shadow); backdrop-filter: blur(12px);
-      position: relative; overflow: hidden;
+      background:var(--card); border:1px solid var(--border);
+      border-radius:18px; padding:1.15rem;
+      transition:transform .2s,border-color .2s,box-shadow .2s;
+      box-shadow:var(--shadow); backdrop-filter:blur(12px);
+      position:relative; overflow:hidden;
     }
-
     .card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(34,211,238,0.05), transparent 30%, rgba(139,92,246,0.04));
-      pointer-events: none;
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg,rgba(34,211,238,.05),transparent 30%,rgba(139,92,246,.04));
+      pointer-events:none;
     }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(34, 211, 238, 0.5);
-      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.34);
-    }
-
-    .card-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 0.8rem;
-      margin-bottom: 0.9rem; position: relative; z-index: 1;
-    }
-
-    .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .flag { font-size: 1.9rem; }
-
-    .pill-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-top: 0.4rem; }
-
+    .card:hover { transform:translateY(-3px); border-color:rgba(34,211,238,.5); box-shadow:0 24px 55px rgba(0,0,0,.34); }
+    .card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.8rem; margin-bottom:.9rem; position:relative; z-index:1; }
+    .card-title { font-size:1.05rem; font-weight:700; margin-bottom:.2rem; }
+    .flag { font-size:1.9rem; }
+    .pill-row { display:flex; gap:.45rem; flex-wrap:wrap; margin-top:.4rem; }
     .pill {
-      display: inline-flex; align-items: center; gap: 0.25rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #cfe7ff; border-radius: 999px;
-      padding: 0.22rem 0.58rem; font-size: 0.72rem;
+      display:inline-flex; align-items:center; gap:.25rem;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+      color:#cfe7ff; border-radius:999px; padding:.22rem .58rem; font-size:.72rem;
     }
-
-    .salary-range {
-      font-size: 1.16rem; font-weight: 800; color: var(--accent);
-      margin: 0.45rem 0 0.3rem; position: relative; z-index: 1;
+    .pill.green  { background:rgba(16,185,129,.12); border-color:rgba(16,185,129,.3); color:#6ee7b7; }
+    .pill.purple { background:rgba(139,92,246,.12); border-color:rgba(139,92,246,.3); color:#c4b5fd; }
+    .salary-range { font-size:1.16rem; font-weight:800; color:var(--accent); margin:.45rem 0 .3rem; position:relative; z-index:1; }
+    .salary-meta,.salary-levels,.country-note { position:relative; z-index:1; }
+    .salary-meta { font-size:.82rem; color:var(--muted); margin-bottom:.55rem; }
+    .salary-levels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.55rem; margin:.75rem 0; }
+    .mini-stat { padding:.65rem .55rem; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); text-align:center; }
+    .mini-stat .k { display:block; color:var(--muted); font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.2rem; }
+    .mini-stat .v { font-size:.9rem; font-weight:700; color:#fff; }
+    .country-note { font-size:.8rem; color:#c4d4eb; margin-top:.45rem; }
+    .bar-wrap { margin-top:.9rem; position:relative; z-index:1; }
+    .bar-label { display:flex; justify-content:space-between; font-size:.73rem; color:var(--muted); margin-bottom:.34rem; }
+    .bar-bg { background:rgba(30,41,59,.9); border-radius:999px; height:8px; overflow:hidden; }
+    .bar-fill { height:100%; border-radius:999px; background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent3)); box-shadow:0 0 20px rgba(34,211,238,.25); }
+    .empty-state { padding:1.2rem; text-align:center; color:var(--muted); background:var(--card); border:1px dashed rgba(148,163,184,.25); border-radius:16px; }
+    /* REMOTE SECTION */
+    .remote-hero {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1rem; margin-bottom:1.5rem;
     }
-
-    .salary-meta, .salary-levels, .country-note { position: relative; z-index: 1; }
-
-    .salary-meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.55rem; }
-
-    .salary-levels {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.55rem; margin: 0.75rem 0;
+    .remote-kpi {
+      padding:1.1rem 1.2rem; border-radius:18px;
+      background:var(--card); border:1px solid var(--border);
+      box-shadow:var(--shadow); backdrop-filter:blur(12px);
+      display:flex; align-items:center; gap:.9rem;
     }
-
-    .mini-stat {
-      padding: 0.65rem 0.55rem; border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      text-align: center;
+    .remote-kpi .icon { font-size:1.8rem; flex-shrink:0; }
+    .remote-kpi .kpi-label { color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.08em; }
+    .remote-kpi .kpi-value { font-size:1.25rem; font-weight:800; color:#fff; }
+    .remote-filters {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,240px));
+      gap:.9rem; margin-bottom:1.2rem;
     }
-
-    .mini-stat .k {
-      display: block; color: var(--muted); font-size: 0.68rem;
-      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem;
+    .remote-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1rem; }
+    .remote-card {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:18px; padding:1.2rem;
+      transition:transform .2s,border-color .2s,box-shadow .2s;
+      box-shadow:var(--shadow); backdrop-filter:blur(12px);
+      position:relative; overflow:hidden;
     }
-
-    .mini-stat .v { font-size: 0.9rem; font-weight: 700; color: #fff; }
-
-    .country-note { font-size: 0.8rem; color: #c4d4eb; margin-top: 0.45rem; }
-
-    .bar-wrap { margin-top: 0.9rem; position: relative; z-index: 1; }
-
-    .bar-label {
-      display: flex; justify-content: space-between;
-      font-size: 0.73rem; color: var(--muted); margin-bottom: 0.34rem;
+    .remote-card::before {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg,rgba(52,211,153,.05),transparent 35%,rgba(34,211,238,.04));
+      pointer-events:none;
     }
-
-    .bar-bg {
-      background: rgba(30, 41, 59, 0.9);
-      border-radius: 999px; height: 8px; overflow: hidden;
+    .remote-card:hover { transform:translateY(-3px); border-color:rgba(52,211,153,.5); box-shadow:0 24px 55px rgba(0,0,0,.34); }
+    .remote-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.8rem; margin-bottom:.8rem; position:relative; z-index:1; }
+    .remote-card-title { font-size:1rem; font-weight:700; margin-bottom:.2rem; }
+    .remote-salary-row { display:flex; gap:.7rem; align-items:baseline; margin:.4rem 0; position:relative; z-index:1; }
+    .remote-salary-main { font-size:1.2rem; font-weight:800; color:var(--accent3); }
+    .remote-salary-label { font-size:.76rem; color:var(--muted); }
+    .remote-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin:.75rem 0; position:relative; z-index:1; }
+    .remote-stat { padding:.55rem .45rem; border-radius:10px; background:rgba(52,211,153,.05); border:1px solid rgba(52,211,153,.1); text-align:center; }
+    .remote-stat .rk { display:block; color:var(--muted); font-size:.66rem; text-transform:uppercase; letter-spacing:.07em; margin-bottom:.18rem; }
+    .remote-stat .rv { font-size:.88rem; font-weight:700; color:#6ee7b7; }
+    .remote-note { font-size:.8rem; color:#c4d4eb; margin-top:.4rem; position:relative; z-index:1; }
+    .remote-badges { display:flex; gap:.4rem; flex-wrap:wrap; margin-top:.6rem; position:relative; z-index:1; }
+    .tag {
+      display:inline-flex; align-items:center; gap:.25rem;
+      padding:.22rem .6rem; border-radius:999px; font-size:.72rem; font-weight:600;
     }
-
-    .bar-fill {
-      height: 100%; border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3));
-      box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
-    }
-
-    .empty-state {
-      padding: 1.2rem; text-align: center; color: var(--muted);
-      background: var(--card);
-      border: 1px dashed rgba(148,163,184,0.25);
-      border-radius: 16px;
-    }
-
-    .table-wrap {
-      overflow-x: auto; background: var(--card);
-      border: 1px solid var(--border); border-radius: 18px;
-      box-shadow: var(--shadow); backdrop-filter: blur(12px);
-    }
-
-    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-
-    th {
-      background: rgba(34,211,238,0.08);
-      padding: 0.8rem 0.85rem; text-align: left;
-      border-bottom: 1px solid var(--border);
-      color: var(--accent); font-weight: 700; white-space: nowrap;
-    }
-
-    td {
-      padding: 0.72rem 0.85rem;
-      border-bottom: 1px solid rgba(71,85,105,0.22);
-      vertical-align: middle;
-    }
-
-    tr:hover td { background: rgba(255,255,255,0.025); }
-
-    .rank-badge {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 30px; height: 30px; border-radius: 50%;
-      font-weight: 800; font-size: 0.82rem;
-    }
-
-    .rank-1 { background: rgba(255,215,0,0.18); color: #ffd700; }
-    .rank-2 { background: rgba(192,192,192,0.16); color: #d5d8dc; }
-    .rank-3 { background: rgba(205,127,50,0.16); color: #e7a56d; }
-    .rank-n { background: rgba(100,116,139,0.15); color: var(--muted); }
-
-    .demand-dot {
-      display: inline-block; width: 9px; height: 9px;
-      border-radius: 50%; margin-right: 6px;
-    }
-
-    .demand-high { background: var(--success); }
-    .demand-mid  { background: var(--warning); }
-    .demand-low  { background: var(--danger); }
-
-    .charts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-      gap: 1.4rem; margin-top: 1rem;
-    }
-
-    .chart-card, .method-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 18px; padding: 1.15rem;
-      box-shadow: var(--shadow); backdrop-filter: blur(12px);
-    }
-
-    .chart-card h3, .method-card h3 {
-      font-size: 0.95rem; color: #dff7ff; margin-bottom: 0.9rem;
-    }
-
-    .chart-sub { color: var(--muted); font-size: 0.78rem; margin-bottom: 0.9rem; }
-
-    .bar-chart { display: flex; flex-direction: column; gap: 0.55rem; }
-
-    .bar-row { display: flex; align-items: center; gap: 0.65rem; font-size: 0.82rem; }
-
-    .bar-country {
-      width: 104px; text-align: right; color: var(--muted);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      flex-shrink: 0;
-    }
-
-    .bar-outer {
-      flex: 1; background: rgba(30, 41, 59, 0.92);
-      border-radius: 999px; height: 22px;
-      position: relative; overflow: hidden;
-    }
-
-    .bar-inner {
-      height: 100%; border-radius: 999px;
-      display: flex; align-items: center;
-      padding-left: 8px; font-size: 0.72rem;
-      font-weight: 700; color: #fff;
-      transition: width 0.8s ease;
-    }
-
-    .bar-inner.ciso  { background: linear-gradient(90deg, #8b5cf6, #22d3ee); }
-    .bar-inner.entry { background: linear-gradient(90deg, #059669, #34d399); }
-    .bar-inner.gap   { background: linear-gradient(90deg, #dc2626, #f59e0b); }
-
-    .donut-wrap { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-    .donut-legend { flex: 1; min-width: 170px; }
-
-    .legend-item {
-      display: flex; align-items: center;
-      gap: 0.55rem; font-size: 0.84rem;
-      margin-bottom: 0.55rem; color: #d7e7ff;
-    }
-
-    .legend-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
-
-    .method-card {
-      margin-bottom: 1rem; font-size: 0.92rem;
-      line-height: 1.8; color: #d8e6f6;
-    }
-
-    .method-card ul { padding-left: 1.2rem; }
-    .method-card li { margin-bottom: 0.45rem; }
-
-    footer {
-      max-width: 1380px; margin: 0 auto;
-      padding: 0 1rem 2rem;
-      color: var(--muted); font-size: 0.82rem; text-align: center;
-    }
-
-    @media (max-width: 980px) {
-      .filters { grid-template-columns: 1fr; }
-      .charts-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      main { padding: 1.2rem 0.9rem 2rem; }
-      .salary-levels { grid-template-columns: 1fr; }
-      .summary-grid { grid-template-columns: 1fr 1fr; }
-      .bar-country { width: 86px; font-size: 0.75rem; }
-    }
-
-    @media (max-width: 480px) {
-      .summary-grid { grid-template-columns: 1fr; }
-      nav { justify-content: flex-start; overflow-x: auto; }
-    }
+    .tag-tz   { background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.25); color:var(--accent); }
+    .tag-lang { background:rgba(139,92,246,.1); border:1px solid rgba(139,92,246,.25); color:#c4b5fd; }
+    .tag-xp   { background:rgba(52,211,153,.1); border:1px solid rgba(52,211,153,.25); color:#6ee7b7; }
+    /* TABLE */
+    .table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+    table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    th { background:rgba(34,211,238,.08); padding:.8rem .85rem; text-align:left; border-bottom:1px solid var(--border); color:var(--accent); font-weight:700; white-space:nowrap; }
+    td { padding:.72rem .85rem; border-bottom:1px solid rgba(71,85,105,.22); vertical-align:middle; }
+    tr:hover td { background:rgba(255,255,255,.025); }
+    .rank-badge { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; font-weight:800; font-size:.82rem; }
+    .rank-1 { background:rgba(255,215,0,.18); color:#ffd700; }
+    .rank-2 { background:rgba(192,192,192,.16); color:#d5d8dc; }
+    .rank-3 { background:rgba(205,127,50,.16); color:#e7a56d; }
+    .rank-n { background:rgba(100,116,139,.15); color:var(--muted); }
+    .demand-dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; }
+    .demand-high { background:var(--success); } .demand-mid { background:var(--warning); } .demand-low { background:var(--danger); }
+    /* CHARTS */
+    .charts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(480px,1fr)); gap:1.4rem; margin-top:1rem; }
+    .chart-card,.method-card { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:1.15rem; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+    .chart-card h3,.method-card h3 { font-size:.95rem; color:#dff7ff; margin-bottom:.9rem; }
+    .chart-sub { color:var(--muted); font-size:.78rem; margin-bottom:.9rem; }
+    .bar-chart { display:flex; flex-direction:column; gap:.55rem; }
+    .bar-row { display:flex; align-items:center; gap:.65rem; font-size:.82rem; }
+    .bar-country { width:104px; text-align:right; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:0; }
+    .bar-outer { flex:1; background:rgba(30,41,59,.92); border-radius:999px; height:22px; position:relative; overflow:hidden; }
+    .bar-inner { height:100%; border-radius:999px; display:flex; align-items:center; padding-left:8px; font-size:.72rem; font-weight:700; color:#fff; transition:width .8s ease; }
+    .bar-inner.ciso  { background:linear-gradient(90deg,#8b5cf6,#22d3ee); }
+    .bar-inner.entry { background:linear-gradient(90deg,#059669,#34d399); }
+    .bar-inner.gap   { background:linear-gradient(90deg,#dc2626,#f59e0b); }
+    .donut-wrap { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+    .donut-legend { flex:1; min-width:170px; }
+    .legend-item { display:flex; align-items:center; gap:.55rem; font-size:.84rem; margin-bottom:.55rem; color:#d7e7ff; }
+    .legend-dot { width:11px; height:11px; border-radius:50%; flex-shrink:0; }
+    .method-card { margin-bottom:1rem; font-size:.92rem; line-height:1.8; color:#d8e6f6; }
+    .method-card ul { padding-left:1.2rem; }
+    .method-card li { margin-bottom:.45rem; }
+    footer { max-width:1380px; margin:0 auto; padding:0 1rem 2rem; color:var(--muted); font-size:.82rem; text-align:center; }
+    @media(max-width:980px) { .filters,.remote-filters { grid-template-columns:1fr; } .charts-grid { grid-template-columns:1fr; } }
+    @media(max-width:640px) { main { padding:1.2rem .9rem 2rem; } .salary-levels { grid-template-columns:1fr; } .summary-grid { grid-template-columns:1fr 1fr; } .bar-country { width:86px; font-size:.75rem; } .remote-stats { grid-template-columns:1fr; } }
+    @media(max-width:480px) { .summary-grid { grid-template-columns:1fr; } nav { justify-content:flex-start; overflow-x:auto; } }
   </style>
 </head>
 <body>
-
 <header>
   <div class="hero">
     <h1>🔐 Cybersecurity Global Salaries 2026</h1>
-    <p>Explora salarios globales en ciberseguridad por país, rol, región y nivel de experiencia — vista comparativa con filtros dinámicos.</p>
+    <p>Salarios en ciberseguridad por país, rol, región, nivel de experiencia y empleo remoto — datos 2025–2026.</p>
     <div class="badges">
       <span class="badge">🌍 30 países</span>
       <span class="badge">🧭 Filtros por región</span>
       <span class="badge">🎓 Entry · Mid · Senior</span>
+      <span class="badge">🌐 Sección remoto</span>
       <span class="badge">📈 Datos 2025–2026</span>
       <span class="badge">💵 USD</span>
     </div>
@@ -448,10 +256,11 @@
 </header>
 
 <nav>
-  <button class="active" data-section="countries" onclick="showSection('countries', this)">📍 Por País</button>
-  <button data-section="roles" onclick="showSection('roles', this)">🏆 Roles</button>
-  <button data-section="charts" onclick="showSection('charts', this)">📈 Visualizaciones</button>
-  <button data-section="methodology" onclick="showSection('methodology', this)">📋 Metodología</button>
+  <button class="active" onclick="showSection('countries',this)">📍 Por País</button>
+  <button onclick="showSection('remote',this)">🌐 Empleo Remoto</button>
+  <button onclick="showSection('roles',this)">🏆 Roles</button>
+  <button onclick="showSection('charts',this)">📈 Visualizaciones</button>
+  <button onclick="showSection('methodology',this)">📋 Metodología</button>
 </nav>
 
 <main>
@@ -459,24 +268,22 @@
   <!-- PAÍSES -->
   <section id="countries" class="active">
     <div class="section-title">📍 Salarios por País</div>
-    <p class="section-note">Filtra por región y nivel de experiencia para ver cómo cambia el rango salarial en cada mercado. Cada tarjeta muestra los tres niveles de referencia para comparación rápida.</p>
-
+    <p class="section-note">Filtra por región y nivel de experiencia. Cada tarjeta muestra los tres niveles de referencia para comparación rápida.</p>
     <div class="summary-grid" id="summaryGrid"></div>
-
     <div class="filters">
       <div class="filter-box">
-        <label for="countrySearch">🔍 Buscar país o región</label>
+        <label>🔍 Buscar país o región</label>
         <input class="search-bar" id="countrySearch" placeholder="Ej. Canadá, Europa, Asia..." oninput="applyCountryFilters()" />
         <div class="filter-hint" id="resultsHint">Mostrando todos los países.</div>
       </div>
       <div class="filter-box">
-        <label for="regionFilter">🌐 Región</label>
+        <label>🌐 Región</label>
         <select class="filter-select" id="regionFilter" onchange="applyCountryFilters()">
           <option value="all">Todas las regiones</option>
         </select>
       </div>
       <div class="filter-box">
-        <label for="experienceFilter">🎓 Nivel de experiencia</label>
+        <label>🎓 Nivel de experiencia</label>
         <select class="filter-select" id="experienceFilter" onchange="applyCountryFilters()">
           <option value="all">Todos los niveles</option>
           <option value="entry">Entry level</option>
@@ -485,27 +292,58 @@
         </select>
       </div>
     </div>
-
     <div class="grid" id="countryGrid"></div>
+  </section>
+
+  <!-- EMPLEO REMOTO -->
+  <section id="remote">
+    <div class="section-title">🌐 Empleo Remoto en Ciberseguridad</div>
+    <p class="section-note">Salarios de posiciones 100% remotas por país contratante. Incluye salario mínimo para junior o sin experiencia, plataformas recomendadas y zonas horarias compatibles.</p>
+
+    <div class="remote-hero" id="remoteKpis"></div>
+
+    <div class="remote-filters">
+      <div class="filter-box">
+        <label>🔍 Buscar país</label>
+        <input class="search-bar" id="remoteSearch" placeholder="Ej. EE.UU., Alemania..." oninput="applyRemoteFilters()" />
+      </div>
+      <div class="filter-box">
+        <label>🎓 Experiencia mínima</label>
+        <select class="filter-select" id="remoteXpFilter" onchange="applyRemoteFilters()">
+          <option value="all">Cualquier nivel</option>
+          <option value="none">Sin experiencia</option>
+          <option value="junior">Junior (0–1 año)</option>
+          <option value="mid">Mid (2–4 años)</option>
+        </select>
+      </div>
+      <div class="filter-box">
+        <label>⏰ Zona horaria</label>
+        <select class="filter-select" id="remoteTzFilter" onchange="applyRemoteFilters()">
+          <option value="all">Todas</option>
+          <option value="Americas">Américas (UTC-8 a UTC-3)</option>
+          <option value="Europe">Europa (UTC 0 a UTC+3)</option>
+          <option value="Asia">Asia / Pacífico (UTC+5 a UTC+12)</option>
+          <option value="Global">Global / Async</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="remote-grid" id="remoteGrid"></div>
   </section>
 
   <!-- ROLES -->
   <section id="roles">
     <div class="section-title">🏆 Roles Mejor Pagados — Ranking Global</div>
-    <p class="section-note">Ordenados por salario máximo en EE.UU. Contrasta potencial salarial, seniority y presión de demanda entre los 15 roles principales de la industria.</p>
+    <p class="section-note">Ordenados por salario máximo en EE.UU. Contrasta potencial salarial, seniority y presión de demanda entre los 15 roles principales.</p>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Rol</th>
-            <th>Nivel</th>
-            <th>Salario EE.UU. (USD/año)</th>
-            <th>Promedio global</th>
-            <th>Demanda 2026</th>
-            <th>Certificaciones clave</th>
-          </tr>
-        </thead>
+        <thead><tr>
+          <th>#</th><th>Rol</th><th>Nivel</th>
+          <th>Salario EE.UU. (USD/año)</th>
+          <th>Promedio global</th>
+          <th>Demanda 2026</th>
+          <th>Certificaciones clave</th>
+        </tr></thead>
         <tbody id="rolesBody"></tbody>
       </table>
     </div>
@@ -514,64 +352,34 @@
   <!-- CHARTS -->
   <section id="charts">
     <div class="section-title">📈 Visualizaciones</div>
-    <p class="section-note">Identifica de un vistazo los países con mayor techo salarial, mejores entradas, mayor brecha entry–senior y distribución de la demanda laboral.</p>
+    <p class="section-note">Identifica de un vistazo los países con mayor techo salarial, mejores entradas, mayor brecha entry–senior y distribución de demanda laboral.</p>
     <div class="charts-grid">
-      <div class="chart-card">
-        <h3>💰 Salario máximo senior / CISO por país</h3>
-        <div class="chart-sub">Top 15 mercados por techo salarial.</div>
-        <div class="bar-chart" id="cisoChart"></div>
-      </div>
-      <div class="chart-card">
-        <h3>🎯 Salario entry level por país</h3>
-        <div class="chart-sub">Top 15 mercados con mejor salario de entrada.</div>
-        <div class="bar-chart" id="entryChart"></div>
-      </div>
-      <div class="chart-card">
-        <h3>⚖️ Brecha entry → senior por país</h3>
-        <div class="chart-sub">Top 15 con mayor salto salarial a lo largo de la carrera.</div>
-        <div class="bar-chart" id="gapChart"></div>
-      </div>
-      <div class="chart-card">
-        <h3>🔬 Distribución de roles por demanda</h3>
-        <div class="chart-sub">Alta, media y baja demanda entre los 15 roles listados.</div>
-        <div class="donut-wrap" id="donutWrap"></div>
-      </div>
+      <div class="chart-card"><h3>💰 Salario máximo senior / CISO por país</h3><div class="chart-sub">Top 15 por techo salarial.</div><div class="bar-chart" id="cisoChart"></div></div>
+      <div class="chart-card"><h3>🎯 Salario entry level por país</h3><div class="chart-sub">Top 15 con mejor salario de entrada.</div><div class="bar-chart" id="entryChart"></div></div>
+      <div class="chart-card"><h3>⚖️ Brecha entry → senior</h3><div class="chart-sub">Top 15 con mayor salto salarial.</div><div class="bar-chart" id="gapChart"></div></div>
+      <div class="chart-card"><h3>🔬 Distribución de roles por demanda</h3><div class="chart-sub">Alta, media y baja demanda.</div><div class="donut-wrap" id="donutWrap"></div></div>
     </div>
   </section>
 
   <!-- METHODOLOGY -->
   <section id="methodology">
     <div class="section-title">📋 Metodología y fuentes</div>
-    <div class="method-card">
-      <h3>📌 Sobre los datos</h3>
-      <p>Los rangos corresponden a compensación anual reportada entre 2025 y 2026, expresada en USD para facilitar comparaciones internacionales. Las cifras por nivel de experiencia se derivan de referencias de mercado público y se presentan como guía orientativa.</p>
-    </div>
-    <div class="method-card">
-      <h3>🔍 Criterios de inclusión</h3>
-      <ul>
-        <li>Se priorizaron mercados con volumen relevante de ofertas en ciberseguridad y disponibilidad de datos salariales consistentes.</li>
-        <li><strong>Entry</strong> representa perfiles de entrada (0–2 años); <strong>Mid</strong> aproxima profesionales con experiencia intermedia (3–6 años); <strong>Senior</strong> refleja líderes técnicos o ejecutivos (7+ años).</li>
-        <li>No se incluyen bonos, equity ni beneficios adicionales, que pueden elevar la compensación total significativamente.</li>
-        <li>Los datos están pensados para comparación macro, no como oferta contractual exacta.</li>
-      </ul>
-    </div>
-    <div class="method-card">
-      <h3>📚 Fuentes de referencia</h3>
-      <ul>
-        <li>ISC² Cybersecurity Workforce Study 2024</li>
-        <li>ISACA State of Cybersecurity 2025</li>
-        <li>LinkedIn Salary Insights 2025–2026</li>
-        <li>Glassdoor, PayScale y Levels.fyi (datos agregados)</li>
-        <li>Informes nacionales de empleo TI y reportes sectoriales</li>
-        <li>Encuestas de HackerOne, BugCrowd y SANS Survey</li>
-      </ul>
-    </div>
-    <div class="method-card">
-      <h3>⚠️ Limitaciones</h3>
-      <p>Los salarios reales varían por ciudad, empresa, vertical, clearance de seguridad, modalidad remota o híbrida y capacidad de negociación. Esta página resume tendencias comparables; no sustituye al due diligence salarial local.</p>
-    </div>
+    <div class="method-card"><h3>📌 Sobre los datos</h3><p>Rangos de compensación anual 2025–2026 en USD. Las cifras de empleo remoto reflejan salarios pagados por empresas contratantes en esos países, no el costo de vida del trabajador.</p></div>
+    <div class="method-card"><h3>🔍 Criterios de inclusión</h3><ul>
+      <li><strong>Entry</strong>: 0–2 años; <strong>Mid</strong>: 3–6 años; <strong>Senior</strong>: 7+ años.</li>
+      <li>Salario mínimo remoto para sin experiencia = posiciones de helpdesk de seguridad, SOC L1, practicante remunerado o roles de triage con capacitación incluida.</li>
+      <li>No incluyen bonos, equity ni beneficios.</li>
+    </ul></div>
+    <div class="method-card"><h3>📚 Fuentes</h3><ul>
+      <li>ISC² Cybersecurity Workforce Study 2024</li>
+      <li>ISACA State of Cybersecurity 2025</li>
+      <li>LinkedIn Salary Insights 2025–2026</li>
+      <li>Glassdoor, PayScale, Levels.fyi</li>
+      <li>Remote.com, Hired.com, We Work Remotely (datos agregados)</li>
+      <li>HackerOne, BugCrowd, SANS Survey</li>
+    </ul></div>
+    <div class="method-card"><h3>⚠️ Limitaciones</h3><p>Los salarios varían por ciudad, empresa, vertical, clearance y negociación. Esta página es una guía orientativa, no una oferta contractual.</p></div>
   </section>
-
 </main>
 
 <footer>
@@ -579,185 +387,222 @@
 </footer>
 
 <script>
-// ── DATA ─────────────────────────────────────────────────────────────────────
+// ── DATA PAÍSES ───────────────────────────────────────────────────────────────
 const countries = [
-  { name:"Estados Unidos", flag:"🇺🇸", region:"América",      entry:65000,  mid:130000, senior:450000, note:"Mercado más grande del mundo" },
-  { name:"Suiza",          flag:"🇨🇭", region:"Europa",       entry:70000,  mid:140000, senior:280000, note:"Mayor salario mediano global" },
-  { name:"Alemania",       flag:"🇩🇪", region:"Europa",       entry:50000,  mid:95000,  senior:200000, note:"Gran demanda en sector industrial" },
-  { name:"Reino Unido",    flag:"🇬🇧", region:"Europa",       entry:45000,  mid:90000,  senior:210000, note:"Hub financiero y fintech" },
-  { name:"Países Bajos",   flag:"🇳🇱", region:"Europa",       entry:48000,  mid:92000,  senior:180000, note:"Centro europeo de ciberseguridad" },
-  { name:"Francia",        flag:"🇫🇷", region:"Europa",       entry:42000,  mid:82000,  senior:170000, note:"Fuerte inversión pública en defensa" },
-  { name:"Dinamarca",      flag:"🇩🇰", region:"Europa",       entry:55000,  mid:100000, senior:185000, note:"Alta madurez digital" },
-  { name:"Noruega",        flag:"🇳🇴", region:"Europa",       entry:55000,  mid:98000,  senior:175000, note:"Sector energético demandante" },
-  { name:"Suecia",         flag:"🇸🇪", region:"Europa",       entry:48000,  mid:88000,  senior:170000, note:"Ecosistema de startups tech" },
-  { name:"Canadá",         flag:"🇨🇦", region:"América",      entry:52000,  mid:105000, senior:230000, note:"Crecimiento acelerado post-2023" },
-  { name:"Australia",      flag:"🇦🇺", region:"Oceanía",      entry:55000,  mid:110000, senior:220000, note:"Regulación SOCI activa" },
-  { name:"Singapur",       flag:"🇸🇬", region:"Asia",         entry:45000,  mid:95000,  senior:200000, note:"Hub asiático de ciberseguridad" },
-  { name:"Israel",         flag:"🇮🇱", region:"Asia",         entry:60000,  mid:115000, senior:250000, note:"Ecosistema único Unit 8200" },
-  { name:"Emiratos Árabes",flag:"🇦🇪", region:"Oriente Medio",entry:40000,  mid:90000,  senior:200000, note:"Inversión masiva en smart city" },
-  { name:"Arabia Saudita", flag:"🇸🇦", region:"Oriente Medio",entry:35000,  mid:85000,  senior:180000, note:"Vision 2030 impulsa demanda" },
-  { name:"Japón",          flag:"🇯🇵", region:"Asia",         entry:40000,  mid:75000,  senior:160000, note:"Escasez crítica de talento" },
-  { name:"Corea del Sur",  flag:"🇰🇷", region:"Asia",         entry:38000,  mid:72000,  senior:150000, note:"Sector gaming y finanzas" },
-  { name:"India",          flag:"🇮🇳", region:"Asia",         entry:8000,   mid:22000,  senior:80000,  note:"Volumen enorme de profesionales" },
-  { name:"Brasil",         flag:"🇧🇷", region:"América",      entry:12000,  mid:28000,  senior:90000,  note:"Mayor mercado de LatAm" },
-  { name:"México",         flag:"🇲🇽", region:"América",      entry:10000,  mid:22000,  senior:70000,  note:"Nearshoring impulsa demanda" },
-  { name:"Argentina",      flag:"🇦🇷", region:"América",      entry:6000,   mid:15000,  senior:60000,  note:"Talento exportado a EE.UU. y Europa" },
-  { name:"Colombia",       flag:"🇨🇴", region:"América",      entry:8000,   mid:18000,  senior:55000,  note:"Crecimiento en banca digital" },
-  { name:"Chile",          flag:"🇨🇱", region:"América",      entry:10000,  mid:24000,  senior:65000,  note:"Regulación más madura de LatAm" },
-  { name:"Polonia",        flag:"🇵🇱", region:"Europa",       entry:28000,  mid:58000,  senior:130000, note:"Outsourcing europeo en auge" },
-  { name:"España",         flag:"🇪🇸", region:"Europa",       entry:30000,  mid:62000,  senior:140000, note:"Crecimiento de SOCs corporativos" },
-  { name:"Portugal",       flag:"🇵🇹", region:"Europa",       entry:25000,  mid:48000,  senior:110000, note:"Destino de nearshoring EU" },
-  { name:"Rumanía",        flag:"🇷🇴", region:"Europa",       entry:20000,  mid:42000,  senior:100000, note:"Talento técnico competitivo" },
-  { name:"Nueva Zelanda",  flag:"🇳🇿", region:"Oceanía",      entry:45000,  mid:85000,  senior:160000, note:"Mercado pequeño, salarios altos" },
-  { name:"Sudáfrica",      flag:"🇿🇦", region:"África",       entry:15000,  mid:32000,  senior:85000,  note:"Hub africano emergente" },
-  { name:"Nigeria",        flag:"🇳🇬", region:"África",       entry:5000,   mid:12000,  senior:40000,  note:"Mercado fintech en expansión" }
+  { name:"Estados Unidos", flag:"🇺🇸", region:"América",       entry:65000, mid:130000, senior:450000, note:"Mercado más grande del mundo" },
+  { name:"Suiza",          flag:"🇨🇭", region:"Europa",        entry:70000, mid:140000, senior:280000, note:"Mayor salario mediano global" },
+  { name:"Alemania",       flag:"🇩🇪", region:"Europa",        entry:50000, mid:95000,  senior:200000, note:"Gran demanda en sector industrial" },
+  { name:"Reino Unido",    flag:"🇬🇧", region:"Europa",        entry:45000, mid:90000,  senior:210000, note:"Hub financiero y fintech" },
+  { name:"Países Bajos",   flag:"🇳🇱", region:"Europa",        entry:48000, mid:92000,  senior:180000, note:"Centro europeo de ciberseguridad" },
+  { name:"Francia",        flag:"🇫🇷", region:"Europa",        entry:42000, mid:82000,  senior:170000, note:"Fuerte inversión pública en defensa" },
+  { name:"Dinamarca",      flag:"🇩🇰", region:"Europa",        entry:55000, mid:100000, senior:185000, note:"Alta madurez digital" },
+  { name:"Noruega",        flag:"🇳🇴", region:"Europa",        entry:55000, mid:98000,  senior:175000, note:"Sector energético demandante" },
+  { name:"Suecia",         flag:"🇸🇪", region:"Europa",        entry:48000, mid:88000,  senior:170000, note:"Ecosistema de startups tech" },
+  { name:"Canadá",         flag:"🇨🇦", region:"América",       entry:52000, mid:105000, senior:230000, note:"Crecimiento acelerado post-2023" },
+  { name:"Australia",      flag:"🇦🇺", region:"Oceanía",       entry:55000, mid:110000, senior:220000, note:"Regulación SOCI activa" },
+  { name:"Singapur",       flag:"🇸🇬", region:"Asia",          entry:45000, mid:95000,  senior:200000, note:"Hub asiático de ciberseguridad" },
+  { name:"Israel",         flag:"🇮🇱", region:"Asia",          entry:60000, mid:115000, senior:250000, note:"Ecosistema único Unit 8200" },
+  { name:"Emiratos Árabes",flag:"🇦🇪", region:"Oriente Medio", entry:40000, mid:90000,  senior:200000, note:"Inversión masiva en smart city" },
+  { name:"Arabia Saudita", flag:"🇸🇦", region:"Oriente Medio", entry:35000, mid:85000,  senior:180000, note:"Vision 2030 impulsa demanda" },
+  { name:"Japón",          flag:"🇯🇵", region:"Asia",          entry:40000, mid:75000,  senior:160000, note:"Escasez crítica de talento" },
+  { name:"Corea del Sur",  flag:"🇰🇷", region:"Asia",          entry:38000, mid:72000,  senior:150000, note:"Sector gaming y finanzas" },
+  { name:"India",          flag:"🇮🇳", region:"Asia",          entry:8000,  mid:22000,  senior:80000,  note:"Volumen enorme de profesionales" },
+  { name:"Brasil",         flag:"🇧🇷", region:"América",       entry:12000, mid:28000,  senior:90000,  note:"Mayor mercado de LatAm" },
+  { name:"México",         flag:"🇲🇽", region:"América",       entry:10000, mid:22000,  senior:70000,  note:"Nearshoring impulsa demanda" },
+  { name:"Argentina",      flag:"🇦🇷", region:"América",       entry:6000,  mid:15000,  senior:60000,  note:"Talento exportado a EE.UU. y Europa" },
+  { name:"Colombia",       flag:"🇨🇴", region:"América",       entry:8000,  mid:18000,  senior:55000,  note:"Crecimiento en banca digital" },
+  { name:"Chile",          flag:"🇨🇱", region:"América",       entry:10000, mid:24000,  senior:65000,  note:"Regulación más madura de LatAm" },
+  { name:"Polonia",        flag:"🇵🇱", region:"Europa",        entry:28000, mid:58000,  senior:130000, note:"Outsourcing europeo en auge" },
+  { name:"España",         flag:"🇪🇸", region:"Europa",        entry:30000, mid:62000,  senior:140000, note:"Crecimiento de SOCs corporativos" },
+  { name:"Portugal",       flag:"🇵🇹", region:"Europa",        entry:25000, mid:48000,  senior:110000, note:"Destino de nearshoring EU" },
+  { name:"Rumanía",        flag:"🇷🇴", region:"Europa",        entry:20000, mid:42000,  senior:100000, note:"Talento técnico competitivo" },
+  { name:"Nueva Zelanda",  flag:"🇳🇿", region:"Oceanía",       entry:45000, mid:85000,  senior:160000, note:"Mercado pequeño, salarios altos" },
+  { name:"Sudáfrica",      flag:"🇿🇦", region:"África",        entry:15000, mid:32000,  senior:85000,  note:"Hub africano emergente" },
+  { name:"Nigeria",        flag:"🇳🇬", region:"África",        entry:5000,  mid:12000,  senior:40000,  note:"Mercado fintech en expansión" }
+];
+
+// ── DATA REMOTO ───────────────────────────────────────────────────────────────
+const remoteJobs = [
+  { country:"Estados Unidos", flag:"🇺🇸", tz:"Americas", noExp:28000, junior:40000, mid:75000, senior:160000, platforms:"Hired, LinkedIn, Dice", lang:"Inglés", note:"Mayor oferta remota del mundo; muchos roles exigen timezone EST/PST", xpRequired:"none" },
+  { country:"Canadá",         flag:"🇨🇦", tz:"Americas", noExp:24000, junior:36000, mid:65000, senior:130000, platforms:"LinkedIn, Jobillico", lang:"Inglés/Francés", note:"Políticas de trabajo remoto muy maduras post-2022", xpRequired:"none" },
+  { country:"Reino Unido",    flag:"🇬🇧", tz:"Europe",   noExp:22000, junior:32000, mid:58000, senior:120000, platforms:"CW Jobs, LinkedIn", lang:"Inglés", note:"Sector fintech e insurtech muy activo en remoto", xpRequired:"none" },
+  { country:"Alemania",       flag:"🇩🇪", tz:"Europe",   noExp:26000, junior:36000, mid:62000, senior:110000, platforms:"StepStone, LinkedIn", lang:"Inglés/Alemán", note:"Empresas tech aceptan remoto; pymes aún prefieren híbrido", xpRequired:"junior" },
+  { country:"Países Bajos",   flag:"🇳🇱", tz:"Europe",   noExp:24000, junior:34000, mid:60000, senior:105000, platforms:"Indeed NL, LinkedIn", lang:"Inglés", note:"Alto porcentaje de empresas con full-remote en tech", xpRequired:"none" },
+  { country:"España",         flag:"🇪🇸", tz:"Europe",   noExp:18000, junior:25000, mid:42000, senior:85000,  platforms:"InfoJobs, LinkedIn", lang:"Español/Inglés", note:"Mercado remoto creciendo; foco en LatAm como pool de talento", xpRequired:"none" },
+  { country:"Portugal",       flag:"🇵🇹", tz:"Europe",   noExp:15000, junior:22000, mid:38000, senior:75000,  platforms:"LinkedIn, Landing.jobs", lang:"Inglés/Portugués", note:"Hub de nearshoring EU con cultura remote-first", xpRequired:"none" },
+  { country:"Polonia",        flag:"🇵🇱", tz:"Europe",   noExp:16000, junior:24000, mid:44000, senior:85000,  platforms:"JustJoin.it, LinkedIn", lang:"Inglés", note:"Gran ecosistema IT remoto, orientado a exportar servicios", xpRequired:"none" },
+  { country:"Australia",      flag:"🇦🇺", tz:"Asia",     noExp:26000, junior:38000, mid:68000, senior:130000, platforms:"Seek, LinkedIn", lang:"Inglés", note:"Roles remotos con clearance de seguridad local requerido", xpRequired:"junior" },
+  { country:"Singapur",       flag:"🇸🇬", tz:"Asia",     noExp:20000, junior:30000, mid:55000, senior:110000, platforms:"Tech in Asia, LinkedIn", lang:"Inglés", note:"Hub regional; roles remotos para zona APAC", xpRequired:"junior" },
+  { country:"India",          flag:"🇮🇳", tz:"Asia",     noExp:4000,  junior:7000,  mid:16000, senior:45000,  platforms:"Naukri, LinkedIn", lang:"Inglés", note:"Mayor mercado de talento remoto en ciberseguridad por volumen", xpRequired:"none" },
+  { country:"Israel",         flag:"🇮🇱", tz:"Europe",   noExp:22000, junior:35000, mid:65000, senior:140000, platforms:"LinkedIn, AllJobs", lang:"Inglés/Hebreo", note:"Startups de ciberseguridad con cultura full-remote", xpRequired:"junior" },
+  { country:"Brasil",         flag:"🇧🇷", tz:"Americas", noExp:6000,  junior:10000, mid:20000, senior:50000,  platforms:"Gupy, LinkedIn", lang:"Portugués/Inglés", note:"Empresas de EE.UU. contratan talento brasileño remoto", xpRequired:"none" },
+  { country:"México",         flag:"🇲🇽", tz:"Americas", noExp:5000,  junior:9000,  mid:18000, senior:45000,  platforms:"OCC, LinkedIn", lang:"Español/Inglés", note:"Nearshoring activo; timezone compatible con EE.UU.", xpRequired:"none" },
+  { country:"Argentina",      flag:"🇦🇷", tz:"Americas", noExp:4000,  junior:8000,  mid:16000, senior:40000,  platforms:"Zonajobs, LinkedIn", lang:"Español/Inglés", note:"Talento competitivo contratado por empresas USD", xpRequired:"none" },
+  { country:"Colombia",       flag:"🇨🇴", tz:"Americas", noExp:4500,  junior:8500,  mid:17000, senior:42000,  platforms:"Computrabajo, LinkedIn", lang:"Español/Inglés", note:"Ecosistema de startups tech con cultura remota", xpRequired:"none" },
+  { country:"Chile",          flag:"🇨🇱", tz:"Americas", noExp:5500,  junior:10000, mid:20000, senior:48000,  platforms:"Bumeran, LinkedIn", lang:"Español/Inglés", note:"Mayor madurez regulatoria en LatAm, buen acceso a roles internacionales", xpRequired:"none" },
+  { country:"Emiratos Árabes",flag:"🇦🇪", tz:"Europe",   noExp:18000, junior:28000, mid:55000, senior:110000, platforms:"Bayt, LinkedIn", lang:"Inglés/Árabe", note:"Roles de seguridad para infraestructura crítica; muchos requieren presencial", xpRequired:"mid" },
+  { country:"Sudáfrica",      flag:"🇿🇦", tz:"Europe",   noExp:7000,  junior:12000, mid:24000, senior:55000,  platforms:"Pnet, LinkedIn", lang:"Inglés", note:"Hub africano con talento exportado a EU y US remotamente", xpRequired:"none" },
+  { country:"Global / Async", flag:"🌐",  tz:"Global",   noExp:12000, junior:20000, mid:45000, senior:120000, platforms:"Remote.com, Deel, Toptal", lang:"Inglés", note:"Plataformas sin restricción geográfica; pago en USD via Deel/Wise", xpRequired:"none" }
 ];
 
 const roles = [
-  { rank:1,  name:"CISO",                        level:"Ejecutivo",   usMin:200000, usMax:450000, globalAvg:175000, demand:"Alta",  certs:"CISSP, CISM, CCISO" },
-  { rank:2,  name:"Cloud Security Architect",    level:"Senior",      usMin:150000, usMax:320000, globalAvg:130000, demand:"Alta",  certs:"AWS Security, CCSP" },
-  { rank:3,  name:"Red Team Lead",               level:"Senior",      usMin:140000, usMax:300000, globalAvg:110000, demand:"Alta",  certs:"OSCP, CRTE, OSED" },
-  { rank:4,  name:"Threat Intelligence Analyst", level:"Senior",      usMin:120000, usMax:260000, globalAvg:95000,  demand:"Alta",  certs:"GCTI, CEH" },
-  { rank:5,  name:"Security Engineer DevSecOps", level:"Mid-Senior",  usMin:115000, usMax:250000, globalAvg:90000,  demand:"Alta",  certs:"CKS, AWS SA" },
-  { rank:6,  name:"Incident Response Lead",      level:"Senior",      usMin:110000, usMax:230000, globalAvg:85000,  demand:"Alta",  certs:"GCFE, GCIH" },
-  { rank:7,  name:"Penetration Tester",          level:"Mid",         usMin:90000,  usMax:200000, globalAvg:70000,  demand:"Alta",  certs:"OSCP, CEH, GPEN" },
-  { rank:8,  name:"SOC Analyst L3",              level:"Mid-Senior",  usMin:85000,  usMax:170000, globalAvg:60000,  demand:"Alta",  certs:"GCIA, GCIH" },
-  { rank:9,  name:"AppSec Engineer",             level:"Mid",         usMin:100000, usMax:220000, globalAvg:80000,  demand:"Alta",  certs:"GWEB, CSSLP" },
-  { rank:10, name:"Malware Analyst",             level:"Mid",         usMin:80000,  usMax:160000, globalAvg:58000,  demand:"Media", certs:"GREM, CREA" },
-  { rank:11, name:"GRC Analyst",                level:"Mid",         usMin:70000,  usMax:140000, globalAvg:52000,  demand:"Media", certs:"CISA, CRISC, ISO27001" },
-  { rank:12, name:"SOC Analyst L1",              level:"Junior",      usMin:45000,  usMax:80000,  globalAvg:30000,  demand:"Alta",  certs:"CompTIA Security+" },
-  { rank:13, name:"IT Security Auditor",         level:"Mid",         usMin:75000,  usMax:145000, globalAvg:55000,  demand:"Media", certs:"CISA, ISO27001 LA" },
-  { rank:14, name:"Cybersec Instructor",         level:"Senior",      usMin:80000,  usMax:180000, globalAvg:60000,  demand:"Media", certs:"GIAC, CISSP" },
-  { rank:15, name:"Junior Security Analyst",     level:"Entry",       usMin:40000,  usMax:70000,  globalAvg:22000,  demand:"Alta",  certs:"Security+, eJPT" }
+  { rank:1,  name:"CISO",                        level:"Ejecutivo",  usMin:200000, usMax:450000, globalAvg:175000, demand:"Alta",  certs:"CISSP, CISM, CCISO" },
+  { rank:2,  name:"Cloud Security Architect",    level:"Senior",    usMin:150000, usMax:320000, globalAvg:130000, demand:"Alta",  certs:"AWS Security, CCSP" },
+  { rank:3,  name:"Red Team Lead",               level:"Senior",    usMin:140000, usMax:300000, globalAvg:110000, demand:"Alta",  certs:"OSCP, CRTE, OSED" },
+  { rank:4,  name:"Threat Intelligence Analyst", level:"Senior",    usMin:120000, usMax:260000, globalAvg:95000,  demand:"Alta",  certs:"GCTI, CEH" },
+  { rank:5,  name:"Security Engineer DevSecOps", level:"Mid-Senior",usMin:115000, usMax:250000, globalAvg:90000,  demand:"Alta",  certs:"CKS, AWS SA" },
+  { rank:6,  name:"Incident Response Lead",      level:"Senior",    usMin:110000, usMax:230000, globalAvg:85000,  demand:"Alta",  certs:"GCFE, GCIH" },
+  { rank:7,  name:"Penetration Tester",          level:"Mid",       usMin:90000,  usMax:200000, globalAvg:70000,  demand:"Alta",  certs:"OSCP, CEH, GPEN" },
+  { rank:8,  name:"SOC Analyst L3",              level:"Mid-Senior",usMin:85000,  usMax:170000, globalAvg:60000,  demand:"Alta",  certs:"GCIA, GCIH" },
+  { rank:9,  name:"AppSec Engineer",             level:"Mid",       usMin:100000, usMax:220000, globalAvg:80000,  demand:"Alta",  certs:"GWEB, CSSLP" },
+  { rank:10, name:"Malware Analyst",             level:"Mid",       usMin:80000,  usMax:160000, globalAvg:58000,  demand:"Media", certs:"GREM, CREA" },
+  { rank:11, name:"GRC Analyst",                level:"Mid",       usMin:70000,  usMax:140000, globalAvg:52000,  demand:"Media", certs:"CISA, CRISC, ISO27001" },
+  { rank:12, name:"SOC Analyst L1",              level:"Junior",    usMin:45000,  usMax:80000,  globalAvg:30000,  demand:"Alta",  certs:"CompTIA Security+" },
+  { rank:13, name:"IT Security Auditor",         level:"Mid",       usMin:75000,  usMax:145000, globalAvg:55000,  demand:"Media", certs:"CISA, ISO27001 LA" },
+  { rank:14, name:"Cybersec Instructor",         level:"Senior",    usMin:80000,  usMax:180000, globalAvg:60000,  demand:"Media", certs:"GIAC, CISSP" },
+  { rank:15, name:"Junior Security Analyst",     level:"Entry",     usMin:40000,  usMax:70000,  globalAvg:22000,  demand:"Alta",  certs:"Security+, eJPT" }
 ];
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
-function fmtK(n) {
-  return '$' + Math.round(n / 1000) + 'K';
-}
+const fmtK = n => '$' + Math.round(n/1000) + 'K';
+const avg  = arr => arr.length ? Math.round(arr.reduce((a,b)=>a+b,0)/arr.length) : 0;
 
-function avg(arr) {
-  return arr.length ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) : 0;
-}
-
-// ── FILTERS ───────────────────────────────────────────────────────────────────
+// ── PAÍSES ────────────────────────────────────────────────────────────────────
 function getFilteredCountries() {
-  const query  = document.getElementById('countrySearch').value.trim().toLowerCase();
-  const region = document.getElementById('regionFilter').value;
-  return countries.filter(c => {
-    const matchesQuery  = !query || c.name.toLowerCase().includes(query) || c.region.toLowerCase().includes(query);
-    const matchesRegion = region === 'all' || c.region === region;
-    return matchesQuery && matchesRegion;
-  });
+  const q = document.getElementById('countrySearch').value.trim().toLowerCase();
+  const r = document.getElementById('regionFilter').value;
+  return countries.filter(c =>
+    (!q || c.name.toLowerCase().includes(q) || c.region.toLowerCase().includes(q)) &&
+    (r==='all' || c.region===r)
+  );
 }
 
 function applyCountryFilters() {
-  const experience = document.getElementById('experienceFilter').value;
-  const filtered   = getFilteredCountries();
-  renderSummary(filtered, experience);
-  renderCards(filtered, experience);
+  const exp = document.getElementById('experienceFilter').value;
+  const data = getFilteredCountries();
+  renderSummary(data, exp);
+  renderCards(data, exp);
 }
 
-// ── SUMMARY STATS ─────────────────────────────────────────────────────────────
-function renderSummary(data, experience) {
-  const grid = document.getElementById('summaryGrid');
-  if (!data.length) { grid.innerHTML = ''; return; }
-
-  const topSenior = [...data].sort((a, b) => b.senior - a.senior)[0];
-  const topEntry  = [...data].sort((a, b) => b.entry  - a.entry)[0];
-
-  const focusAvg = experience === 'entry'  ? avg(data.map(c => c.entry))
-                 : experience === 'senior' ? avg(data.map(c => c.senior))
-                 :                           avg(data.map(c => c.mid));
-
-  const focusLabel = experience === 'entry'  ? 'Promedio entry'
-                   : experience === 'senior' ? 'Promedio senior'
-                   : 'Promedio mid';
-
-  grid.innerHTML = `
-    <div class="summary-card">
-      <div class="label">Países visibles</div>
-      <div class="value">${data.length}</div>
-      <div class="small">Con los filtros actuales.</div>
-    </div>
-    <div class="summary-card">
-      <div class="label">${focusLabel}</div>
-      <div class="value">${fmtK(focusAvg)}</div>
-      <div class="small">Referencia del subconjunto.</div>
-    </div>
-    <div class="summary-card">
-      <div class="label">Mejor entry</div>
-      <div class="value">${topEntry.flag} ${topEntry.name}</div>
-      <div class="small">${fmtK(topEntry.entry)} de entrada.</div>
-    </div>
-    <div class="summary-card">
-      <div class="label">Mayor techo</div>
-      <div class="value">${topSenior.flag} ${topSenior.name}</div>
-      <div class="small">${fmtK(topSenior.senior)} senior / CISO.</div>
-    </div>
-  `;
+function renderSummary(data, exp) {
+  const g = document.getElementById('summaryGrid');
+  if (!data.length) { g.innerHTML=''; return; }
+  const topS = [...data].sort((a,b)=>b.senior-a.senior)[0];
+  const topE = [...data].sort((a,b)=>b.entry-a.entry)[0];
+  const fAvg = exp==='entry' ? avg(data.map(c=>c.entry)) : exp==='senior' ? avg(data.map(c=>c.senior)) : avg(data.map(c=>c.mid));
+  const fLbl = exp==='entry' ? 'Promedio entry' : exp==='senior' ? 'Promedio senior' : 'Promedio mid';
+  g.innerHTML = `
+    <div class="summary-card"><div class="label">Países</div><div class="value">${data.length}</div><div class="small">Con filtros actuales.</div></div>
+    <div class="summary-card"><div class="label">${fLbl}</div><div class="value">${fmtK(fAvg)}</div><div class="small">Referencia del subconjunto.</div></div>
+    <div class="summary-card"><div class="label">Mejor entry</div><div class="value">${topE.flag} ${topE.name}</div><div class="small">${fmtK(topE.entry)} de entrada.</div></div>
+    <div class="summary-card"><div class="label">Mayor techo</div><div class="value">${topS.flag} ${topS.name}</div><div class="small">${fmtK(topS.senior)} senior/CISO.</div></div>`;
 }
 
-// ── CARDS ─────────────────────────────────────────────────────────────────────
-function renderCards(data, experience) {
-  const grid     = document.getElementById('countryGrid');
-  const hint     = document.getElementById('resultsHint');
-  const maxSen   = Math.max(...countries.map(c => c.senior));
-  const expLabel = { entry:'Entry level', mid:'Mid level', senior:'Senior / ejecutivo', all:'Vista completa' };
-
-  if (!data.length) {
-    grid.innerHTML = '<div class="empty-state">Sin resultados. Prueba otra región o búsqueda.</div>';
-    hint.textContent = 'Sin resultados con los filtros actuales.';
-    return;
-  }
-
-  hint.textContent = `${data.length} país(es) · ${expLabel[experience] || 'Todos los niveles'}`;
-
-  const focusVal = c => experience === 'entry'  ? c.entry
-                      : experience === 'senior' ? c.senior
-                      :                           c.mid;
-
-  const focusName = experience === 'entry'  ? 'Ref. entry'
-                  : experience === 'senior' ? 'Ref. senior'
-                  : 'Ref. mid';
-
+function renderCards(data, exp) {
+  const grid = document.getElementById('countryGrid');
+  const hint = document.getElementById('resultsHint');
+  const maxS = Math.max(...countries.map(c=>c.senior));
+  const lbl  = {entry:'Entry level',mid:'Mid level',senior:'Senior / ejecutivo',all:'Vista completa'};
+  if (!data.length) { grid.innerHTML='<div class="empty-state">Sin resultados.</div>'; hint.textContent='Sin resultados.'; return; }
+  hint.textContent = `${data.length} país(es) · ${lbl[exp]||'Todos los niveles'}`;
+  const fv   = c => exp==='entry' ? c.entry : exp==='senior' ? c.senior : c.mid;
+  const fn   = exp==='entry' ? 'Ref. entry' : exp==='senior' ? 'Ref. senior' : 'Ref. mid';
   grid.innerHTML = data.map(c => {
-    const pct = Math.round((c.senior / maxSen) * 100);
-    return `
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">${c.flag} ${c.name}</div>
-            <div class="pill-row">
-              <span class="pill">🌐 ${c.region}</span>
-            </div>
-          </div>
-          <div class="flag">${c.flag}</div>
-        </div>
-        <div class="salary-range">${fmtK(c.entry)} – ${fmtK(c.senior)} <span style="font-size:.74rem;font-weight:500;color:var(--muted)">/ año</span></div>
-        <div class="salary-meta">${focusName}: <strong style="color:#fff">${fmtK(focusVal(c))}</strong></div>
-        <div class="salary-levels">
-          <div class="mini-stat"><span class="k">Entry</span><span class="v">${fmtK(c.entry)}</span></div>
-          <div class="mini-stat"><span class="k">Mid</span><span class="v">${fmtK(c.mid)}</span></div>
-          <div class="mini-stat"><span class="k">Senior</span><span class="v">${fmtK(c.senior)}</span></div>
-        </div>
-        <div class="country-note">${c.note}</div>
-        <div class="bar-wrap">
-          <div class="bar-label"><span>Entry</span><span>Senior</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
-        </div>
+    const pct = Math.round((c.senior/maxS)*100);
+    return `<div class="card">
+      <div class="card-header">
+        <div><div class="card-title">${c.flag} ${c.name}</div><div class="pill-row"><span class="pill">🌐 ${c.region}</span></div></div>
+        <div class="flag">${c.flag}</div>
       </div>
-    `;
+      <div class="salary-range">${fmtK(c.entry)} – ${fmtK(c.senior)} <span style="font-size:.74rem;font-weight:500;color:var(--muted)">/año</span></div>
+      <div class="salary-meta">${fn}: <strong style="color:#fff">${fmtK(fv(c))}</strong></div>
+      <div class="salary-levels">
+        <div class="mini-stat"><span class="k">Entry</span><span class="v">${fmtK(c.entry)}</span></div>
+        <div class="mini-stat"><span class="k">Mid</span><span class="v">${fmtK(c.mid)}</span></div>
+        <div class="mini-stat"><span class="k">Senior</span><span class="v">${fmtK(c.senior)}</span></div>
+      </div>
+      <div class="country-note">${c.note}</div>
+      <div class="bar-wrap">
+        <div class="bar-label"><span>Entry</span><span>Senior</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
+      </div>
+    </div>`;
   }).join('');
 }
 
-// ── ROLES TABLE ───────────────────────────────────────────────────────────────
+// ── EMPLEO REMOTO ─────────────────────────────────────────────────────────────
+function getFilteredRemote() {
+  const q  = document.getElementById('remoteSearch').value.trim().toLowerCase();
+  const xp = document.getElementById('remoteXpFilter').value;
+  const tz = document.getElementById('remoteTzFilter').value;
+  return remoteJobs.filter(r =>
+    (!q || r.country.toLowerCase().includes(q)) &&
+    (tz==='all' || r.tz===tz) &&
+    (xp==='all' || (xp==='none' && r.xpRequired==='none') ||
+     (xp==='junior' && ['none','junior'].includes(r.xpRequired)) ||
+     (xp==='mid' && ['none','junior','mid'].includes(r.xpRequired)))
+  );
+}
+
+function applyRemoteFilters() {
+  const data = getFilteredRemote();
+  renderRemoteKpis(data);
+  renderRemoteCards(data);
+}
+
+function renderRemoteKpis(data) {
+  if (!data.length) { document.getElementById('remoteKpis').innerHTML=''; return; }
+  const avgNoExp = avg(data.map(r=>r.noExp));
+  const avgJr    = avg(data.map(r=>r.junior));
+  const noExpMin = [...data].sort((a,b)=>b.noExp-a.noExp)[0];
+  document.getElementById('remoteKpis').innerHTML = `
+    <div class="remote-kpi"><div class="icon">🌐</div><div><div class="kpi-label">Países con remoto</div><div class="kpi-value">${data.length}</div></div></div>
+    <div class="remote-kpi"><div class="icon">🟢</div><div><div class="kpi-label">Salario mín. sin exp. (prom.)</div><div class="kpi-value">${fmtK(avgNoExp)}/año</div></div></div>
+    <div class="remote-kpi"><div class="icon">🎓</div><div><div class="kpi-label">Salario mín. junior (prom.)</div><div class="kpi-value">${fmtK(avgJr)}/año</div></div></div>
+    <div class="remote-kpi"><div class="icon">🏆</div><div><div class="kpi-label">Mejor opción sin experiencia</div><div class="kpi-value">${noExpMin.flag} ${noExpMin.country}</div></div></div>`;
+}
+
+function renderRemoteCards(data) {
+  const grid = document.getElementById('remoteGrid');
+  if (!data.length) { grid.innerHTML='<div class="empty-state">Sin resultados con estos filtros.</div>'; return; }
+  const xpLabel = { none:'Sin experiencia', junior:'Junior', mid:'Mid' };
+  const tzLabel = { Americas:'🌎 Américas', Europe:'🌍 Europa', Asia:'🌏 Asia/Pac.', Global:'🌐 Global' };
+  grid.innerHTML = data.map(r => `
+    <div class="remote-card">
+      <div class="remote-card-header">
+        <div>
+          <div class="remote-card-title">${r.flag} ${r.country}</div>
+          <div class="pill-row">
+            <span class="pill">${tzLabel[r.tz]||r.tz}</span>
+            <span class="pill purple">🗣 ${r.lang}</span>
+          </div>
+        </div>
+        <div style="font-size:1.7rem">${r.flag}</div>
+      </div>
+      <div class="remote-salary-row">
+        <div class="remote-salary-main">${fmtK(r.noExp)}</div>
+        <div class="remote-salary-label">mín. sin exp. / año</div>
+      </div>
+      <div class="remote-stats">
+        <div class="remote-stat"><span class="rk">Sin exp.</span><span class="rv">${fmtK(r.noExp)}</span></div>
+        <div class="remote-stat"><span class="rk">Junior</span><span class="rv">${fmtK(r.junior)}</span></div>
+        <div class="remote-stat"><span class="rk">Mid</span><span class="rv">${fmtK(r.mid)}</span></div>
+      </div>
+      <div class="remote-badges">
+        <span class="tag tag-xp">🎓 ${xpLabel[r.xpRequired]||'Cualquiera'}</span>
+        <span class="tag tag-tz">💻 ${r.platforms}</span>
+      </div>
+      <div class="remote-note">${r.note}</div>
+    </div>`
+  ).join('');
+}
+
+// ── ROLES ─────────────────────────────────────────────────────────────────────
 function renderRoles() {
-  const tbody = document.getElementById('rolesBody');
-  const dColor = { Alta:'demand-high', Media:'demand-mid', Baja:'demand-low' };
-  tbody.innerHTML = roles.map(r => {
-    const rc = r.rank <= 3 ? `rank-${r.rank}` : 'rank-n';
-    const dc = dColor[r.demand] || 'demand-mid';
+  const dColor = {Alta:'demand-high',Media:'demand-mid',Baja:'demand-low'};
+  document.getElementById('rolesBody').innerHTML = roles.map(r => {
+    const rc = r.rank<=3 ? `rank-${r.rank}` : 'rank-n';
+    const dc = dColor[r.demand]||'demand-mid';
     return `<tr>
       <td><span class="rank-badge ${rc}">${r.rank}</span></td>
       <td><strong>${r.name}</strong></td>
@@ -772,68 +617,42 @@ function renderRoles() {
 
 // ── CHARTS ────────────────────────────────────────────────────────────────────
 function renderCharts() {
-  const topSenior = [...countries].sort((a,b) => b.senior - a.senior).slice(0,15);
-  const maxSenior = topSenior[0].senior;
-  document.getElementById('cisoChart').innerHTML = topSenior.map(c => {
-    const w = Math.round((c.senior / maxSenior) * 100);
-    return `<div class="bar-row">
-      <div class="bar-country">${c.flag} ${c.name}</div>
-      <div class="bar-outer"><div class="bar-inner ciso" style="width:${w}%">${fmtK(c.senior)}</div></div>
-    </div>`;
+  const topS = [...countries].sort((a,b)=>b.senior-a.senior).slice(0,15);
+  const mxS  = topS[0].senior;
+  document.getElementById('cisoChart').innerHTML = topS.map(c => {
+    const w = Math.round((c.senior/mxS)*100);
+    return `<div class="bar-row"><div class="bar-country">${c.flag} ${c.name}</div><div class="bar-outer"><div class="bar-inner ciso" style="width:${w}%">${fmtK(c.senior)}</div></div></div>`;
   }).join('');
-
-  const topEntry = [...countries].sort((a,b) => b.entry - a.entry).slice(0,15);
-  const maxEntry = topEntry[0].entry;
-  document.getElementById('entryChart').innerHTML = topEntry.map(c => {
-    const w = Math.round((c.entry / maxEntry) * 100);
-    return `<div class="bar-row">
-      <div class="bar-country">${c.flag} ${c.name}</div>
-      <div class="bar-outer"><div class="bar-inner entry" style="width:${w}%">${fmtK(c.entry)}</div></div>
-    </div>`;
+  const topE = [...countries].sort((a,b)=>b.entry-a.entry).slice(0,15);
+  const mxE  = topE[0].entry;
+  document.getElementById('entryChart').innerHTML = topE.map(c => {
+    const w = Math.round((c.entry/mxE)*100);
+    return `<div class="bar-row"><div class="bar-country">${c.flag} ${c.name}</div><div class="bar-outer"><div class="bar-inner entry" style="width:${w}%">${fmtK(c.entry)}</div></div></div>`;
   }).join('');
-
-  const topGap = [...countries].sort((a,b) => (b.senior - b.entry) - (a.senior - a.entry)).slice(0,15);
-  const maxGap = topGap[0].senior - topGap[0].entry;
-  document.getElementById('gapChart').innerHTML = topGap.map(c => {
-    const gap = c.senior - c.entry;
-    const w = Math.round((gap / maxGap) * 100);
-    return `<div class="bar-row">
-      <div class="bar-country">${c.flag} ${c.name}</div>
-      <div class="bar-outer"><div class="bar-inner gap" style="width:${w}%">${fmtK(gap)}</div></div>
-    </div>`;
+  const topG = [...countries].sort((a,b)=>(b.senior-b.entry)-(a.senior-a.entry)).slice(0,15);
+  const mxG  = topG[0].senior - topG[0].entry;
+  document.getElementById('gapChart').innerHTML = topG.map(c => {
+    const gap=c.senior-c.entry; const w=Math.round((gap/mxG)*100);
+    return `<div class="bar-row"><div class="bar-country">${c.flag} ${c.name}</div><div class="bar-outer"><div class="bar-inner gap" style="width:${w}%">${fmtK(gap)}</div></div></div>`;
   }).join('');
-
-  const demandCount = roles.reduce((acc, r) => { acc[r.demand] = (acc[r.demand]||0)+1; return acc; }, {});
-  const colors = { Alta:'#10b981', Media:'#f59e0b', Baja:'#ef4444' };
-  const total = roles.length;
-  let cum = 0;
-  const segs = Object.entries(demandCount).map(([label, count]) => {
-    const pct = count / total;
-    const a0 = cum * 2 * Math.PI - Math.PI/2;
-    cum += pct;
-    const a1 = cum * 2 * Math.PI - Math.PI/2;
-    const r = 62, cx = 82, cy = 82;
-    const x0 = cx + r * Math.cos(a0), y0 = cy + r * Math.sin(a0);
-    const x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1);
-    const lg = pct > 0.5 ? 1 : 0;
-    return `<path d="M${cx},${cy} L${x0.toFixed(1)},${y0.toFixed(1)} A${r},${r} 0 ${lg},1 ${x1.toFixed(1)},${y1.toFixed(1)} Z" fill="${colors[label]}" opacity="0.9"/>`;
+  const dc={};roles.forEach(r=>{ dc[r.demand]=(dc[r.demand]||0)+1; });
+  const col={Alta:'#10b981',Media:'#f59e0b',Baja:'#ef4444'};
+  const tot=roles.length; let cum=0;
+  const segs=Object.entries(dc).map(([lbl,cnt])=>{
+    const p=cnt/tot,a0=cum*2*Math.PI-Math.PI/2;cum+=p;
+    const a1=cum*2*Math.PI-Math.PI/2,r=62,cx=82,cy=82;
+    const x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
+    return `<path d="M${cx},${cy} L${x0.toFixed(1)},${y0.toFixed(1)} A${r},${r} 0 ${p>.5?1:0},1 ${x1.toFixed(1)},${y1.toFixed(1)} Z" fill="${col[lbl]}" opacity="0.9"/>`;
   });
-  const svg = `<svg class="donut" width="164" height="164" viewBox="0 0 164 164">
-    ${segs.join('')}
-    <circle cx="82" cy="82" r="38" fill="rgba(17,24,39,1)"/>
-    <text x="82" y="79" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">${total}</text>
-    <text x="82" y="96" text-anchor="middle" fill="#94a3b8" font-size="10">roles</text>
-  </svg>`;
-  const legend = Object.entries(demandCount).map(([label, count]) =>
-    `<div class="legend-item"><div class="legend-dot" style="background:${colors[label]}"></div><span>${label} demanda — <strong>${count}</strong> roles</span></div>`
-  ).join('');
-  document.getElementById('donutWrap').innerHTML = svg + `<div class="donut-legend">${legend}</div>`;
+  document.getElementById('donutWrap').innerHTML =
+    `<svg class="donut" width="164" height="164" viewBox="0 0 164 164">${segs.join('')}<circle cx="82" cy="82" r="38" fill="rgba(17,24,39,1)"/><text x="82" y="79" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">${tot}</text><text x="82" y="96" text-anchor="middle" fill="#94a3b8" font-size="10">roles</text></svg>` +
+    `<div class="donut-legend">${Object.entries(dc).map(([l,c])=>`<div class="legend-item"><div class="legend-dot" style="background:${col[l]}"></div><span>${l} demanda — <strong>${c}</strong> roles</span></div>`).join('')}</div>`;
 }
 
 // ── NAV ───────────────────────────────────────────────────────────────────────
 function showSection(id, btn) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   if (btn) btn.classList.add('active');
 }
@@ -841,14 +660,13 @@ function showSection(id, btn) {
 // ── INIT ──────────────────────────────────────────────────────────────────────
 (function init() {
   const sel = document.getElementById('regionFilter');
-  [...new Set(countries.map(c => c.region))].sort((a,b) => a.localeCompare(b)).forEach(r => {
-    const opt = document.createElement('option');
-    opt.value = r; opt.textContent = r;
-    sel.appendChild(opt);
+  [...new Set(countries.map(c=>c.region))].sort((a,b)=>a.localeCompare(b)).forEach(r=>{
+    const o=document.createElement('option'); o.value=r; o.textContent=r; sel.appendChild(o);
   });
   renderRoles();
   renderCharts();
   applyCountryFilters();
+  applyRemoteFilters();
 })();
 </script>
 </body>
